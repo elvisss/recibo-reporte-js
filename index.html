@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generar Reporte</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container mx-auto py-10">
+        <form id="formReporte">
+          <div class="flex justify-center flex-wrap gap-4">
+            <div class="w-1/2">
+              <h2 class="text-3xl font-bold">Generar Reporte</h2>
+            </div>
+            <div class="w-full"></div>
+            <div class="w-1/4">
+              <div class="mb-6">
+                <label for="precioxKW" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Precio por KW</label>
+                <input type="text" id="precioxKW" class="w-full" value="0.6499" />
+              </div>
+              <div class="mb-6">
+                <label for="igv" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">IGV</label>
+                <input type="text" id="igv" class="w-full" value="0.18" />
+              </div>
+            </div>
+            <div class="w-1/4">
+              <div class="mb-6">
+                <label for="totalKW" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Total KW</label>
+                <input type="text" id="totalKW" class="w-full" value="325" />
+              </div>
+              <div class="mb-6">
+                <label for="totalAmount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Monto del Recibo</label>
+                <input type="text" id="totalAmount" class="w-full" value="268.50" />
+              </div>
+            </div>
+            <div class="w-full"></div>
+            <div class="w-1/6">
+              <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Generar
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="py-10">
+          <p class="text-right mb-5">
+            Restante <span class="font-bold">S/.<span id="totalRemaining"></span></span><br>
+            Resto x Persona <span class="font-bold">S/.<span id="remainingByPerson"></span></span>
+          </p>
+
+          <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table id="tableReport" class="w-full text-sm text-left text-gray-400">
+                <thead class="text-xs uppercase bg-gray-700 text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Nombre
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            KW Anterior
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            KW Actual
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            KW a Pagar
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Costo sin IGV
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Costo con IGV
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Monto a Pagar + Resto
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
